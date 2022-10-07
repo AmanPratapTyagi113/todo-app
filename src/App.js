@@ -67,20 +67,29 @@ const deleteTodo =async(id)=> {
   await deleteDoc(doc(db, 'todos', id))
 }
 
+const date = new Date()
+const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "Octobar", "November", "December"]
 
   return (
-    <div class="bg">
-      <div class="container">
-        <h3 class="heading">Todo App</h3>
-        <form onSubmit={createTodo} class="form">
+    <div className="bg">
+      <div className="container">
+        <h3 className="heading">Todo App</h3>
+        <div className='date'>
+          <p>{days[date.getDay()]},</p>
+          <p>{date.getDate()}</p>
+          <p>{months[date.getMonth()]}</p>
+          <p>{date.getFullYear()}</p>
+        </div>
+        <form onSubmit={createTodo} className="form">
           <input 
             value={input} 
             onChange={(e)=> setInput(e.target.value)} 
-            class="input"
+            className="input"
             type="text" 
             placeholder='Add Todo' 
           />
-          <button class="button"><AiOutlinePlus size={30} /></button>
+          <button className="button"><AiOutlinePlus size={25} /></button>
         </form>
         <ul>
           {todos.map((todo, index) => (
@@ -94,7 +103,7 @@ const deleteTodo =async(id)=> {
 
         </ul>
         {todos.length < 1 ? null: (
-          <p class="count">{`You have ${todos.length} todos`}</p>
+          <p className="count">{`You have ${todos.length} todos`}</p>
         )}
         
       </div>

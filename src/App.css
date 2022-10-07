@@ -37,6 +37,7 @@ body{
     line-height: 1.75rem; 
     width: 100%; 
     border-width: 1px; 
+    border-radius:8px;
 }
 
 .button{
@@ -55,12 +56,13 @@ body{
 
 .li{
     display: flex; 
-    padding: 0.5rem; 
+    /* padding: 0.5rem;  */
     margin-top: 0.5rem;
     margin-bottom: 0.5rem; 
     text-transform: capitalize; 
     justify-content: space-between; 
     background-color: rgb(203 213 225);
+    border-radius:8px;
 }
 
 .licomplete{
@@ -93,4 +95,17 @@ body{
     display: flex; 
     align-items: center; 
     cursor: pointer; 
+    border-radius:8px;
 }
+
+.container .date{
+    margin: 2rem 0 1rem 0;
+    display: flex;
+   
+    font-size:25px ;
+}
+
+.date p{
+    padding: 0 3px;   
+}
+ 
